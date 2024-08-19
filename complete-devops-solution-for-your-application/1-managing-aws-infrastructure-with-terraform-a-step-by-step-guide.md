@@ -1,5 +1,7 @@
 # Managing AWS Infrastructure with Terraform: A Step-by-Step Guide
 
+tags: `Infrastructure as Code`  `Terraform, AWS`  `Cloud Computing`
+
 ### Introduction
 
 In this article, we will use Terraform to manage AWS infrastructure. By the end of this article, you will be able to create and manage AWS resources such as VPCs, subnets, and EC2 instances, and automate the process of setting up and tearing down your infrastructure.
@@ -450,13 +452,9 @@ In this article, we:
 - Connected to the EC2 instance via SSH.
 - Learned how to destroy created resources.
 
-**Materials used to write this article:**
+### Materials used to write this article:
 
 - https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 - https://docs.aws.amazon.com/
 - https://youtu.be/SLB_c_ayRMo?si=VI1mDwB8mdFXtmMP
 - https://youtu.be/iRaai1IBlB0?si=N6qau7TbrsftJ_z2
-
-**Tags:**
-
-Infrastructure as Code, Terraform, AWS, Cloud Computing
