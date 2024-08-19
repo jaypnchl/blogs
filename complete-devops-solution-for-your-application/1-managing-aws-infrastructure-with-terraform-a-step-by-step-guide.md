@@ -2,13 +2,9 @@
 
 ### Introduction
 
----
-
 In this article, we will use Terraform to manage AWS infrastructure. By the end of this article, you will be able to create and manage AWS resources such as VPCs, subnets, and EC2 instances, and automate the process of setting up and tearing down your infrastructure.
 
 ### Prerequisites:
-
----
 
 1. Terraform is installed on your system
     - If not installed, you can refer to this [documentation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli).
@@ -18,8 +14,6 @@ In this article, we will use Terraform to manage AWS infrastructure. By the end 
 
 ### Sections:
 
----
-
 1. Terraform Basics (required for this project)
 2. Initialize Terraform with AWS Provider
 3. Creating necessary resources to allow SSH to AWS EC2 instance
@@ -27,8 +21,6 @@ In this article, we will use Terraform to manage AWS infrastructure. By the end 
 5. Destroy all resources
 
 ### 1. Terraform Basics
-
----
 
 In this section, We will look at
 
@@ -138,8 +130,6 @@ The above example will only destroy the `aws_vpc` resource named “vpc”.
 
 ### 2. Initialize Terraform with AWS Provider
 
----
-
 In this section, we will:
 
 1. Create access_key from AWS Console.
@@ -187,8 +177,6 @@ In this section, we will:
     You should see an output like this:
     
     ![terraform-init-output](../assets/snaps/terraform-init-output.png)
-
----
 
 ### 3. Creating Necessary Resources to Allow SSH to AWS EC2 Instance
 
@@ -397,8 +385,6 @@ resource "aws_instance" "node-dev" {
 - `instance_type` - keep it `t2.micro` (its free tier).
 - `availability_zone` - keep it the same as the subnet.
 
----
-
 ### 4. SSH to AWS EC2 instance.
 
 In this section, we will SSH to our created EC2 instance.
@@ -426,8 +412,6 @@ In this section, we will SSH to our created EC2 instance.
     Type `yes`.
     
     You will be connected to the remote EC2 instance.
-
----
 
 ### 5. Destroy All resources
 
