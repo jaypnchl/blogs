@@ -1,6 +1,6 @@
 # Managing AWS Infrastructure with Terraform: A Step-by-Step Guide
 
-tags: `Infrastructure as Code`  `Terraform, AWS`  `Cloud Computing`
+tags: `Infrastructure as Code`  `Terraform`  `AWS`  `Cloud Computing`
 
 ### Introduction
 
