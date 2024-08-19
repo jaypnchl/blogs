@@ -2,9 +2,13 @@
 
 ### Introduction
 
+---
+
 In this article, we will use Terraform to manage AWS infrastructure. By the end of this article, you will be able to create and manage AWS resources such as VPCs, subnets, and EC2 instances, and automate the process of setting up and tearing down your infrastructure.
 
 ### Prerequisites:
+
+---
 
 1. Terraform is installed on your system
     - If not installed, you can refer to this [documentation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli).
@@ -14,6 +18,8 @@ In this article, we will use Terraform to manage AWS infrastructure. By the end 
 
 ### Sections:
 
+---
+
 1. Terraform Basics (required for this project)
 2. Initialize Terraform with AWS Provider
 3. Creating necessary resources to allow SSH to AWS EC2 instance
@@ -21,6 +27,8 @@ In this article, we will use Terraform to manage AWS infrastructure. By the end 
 5. Destroy all resources
 
 ### 1. Terraform Basics
+
+---
 
 In this section, We will look at
 
@@ -130,6 +138,8 @@ The above example will only destroy the `aws_vpc` resource named “vpc”.
 
 ### 2. Initialize Terraform with AWS Provider
 
+---
+
 In this section, we will:
 
 1. Create access_key from AWS Console.
@@ -141,7 +151,7 @@ In this section, we will:
 - Under your Profile > Security credentials or go to [Security credentials page](https://us-east-1.console.aws.amazon.com/iam/home#/security_credentials).
 - Scroll till you see “Access keys” and click on “Create access key”.
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f2b79666-fd74-43a3-a934-df7cabfd3bef/615bbbed-8984-4714-94ea-0ceb39c23b2e/Untitled.png)
+    ![aws-access-keys](../assets/snaps/aws-access-keys.png)
     
 - If you see warning with “Root user access keys are not recommended”, click on the checkbox and create the access key.
 - Download the .csv file and save it, as AWS will not show the secret key again on the Console for security reasons.
@@ -176,8 +186,9 @@ In this section, we will:
     
     You should see an output like this:
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f2b79666-fd74-43a3-a934-df7cabfd3bef/b029c745-df68-4cae-b2f1-c0cccbc58e55/Untitled.png)
-    
+    ![terraform-init-output](../assets/snaps/terraform-init-output.png)
+
+---
 
 ### 3. Creating Necessary Resources to Allow SSH to AWS EC2 Instance
 
@@ -333,7 +344,7 @@ resource "aws_security_group" "ssh" {
     
     Change the key name to `dev-key` and give the full path as shown below as per your username.
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f2b79666-fd74-43a3-a934-df7cabfd3bef/4bbc0c88-d140-472b-bd2d-9edbb7e354de/Untitled.png)
+    ![aws-ec2-instance-ssh-key-pair](../assets/snaps/aws-ec2-instance-ssh-key-pair.png)
     
     You can leave other prompts as blank and press Enter.
     
@@ -360,7 +371,7 @@ resource "aws_key_pair" "dev-key" {
 - To get the AMI ID for the instance, go to the EC2 dashboard > Instances > Launch Instances (Top-Right Corner).
 - Under Application and OS Images > Select Ubuntu.
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f2b79666-fd74-43a3-a934-df7cabfd3bef/4db1ffe2-27a7-4b48-862b-45f0e35be4fa/Untitled.png)
+    ![aws-ami-id-console](../assets/snaps/aws-ami-id-console.png)
     
     You will get the AMI ID from here.
     
@@ -385,6 +396,8 @@ resource "aws_instance" "node-dev" {
 - `ami` - add the AMI ID that you got from the console.
 - `instance_type` - keep it `t2.micro` (its free tier).
 - `availability_zone` - keep it the same as the subnet.
+
+---
 
 ### 4. SSH to AWS EC2 instance.
 
@@ -413,7 +426,8 @@ In this section, we will SSH to our created EC2 instance.
     Type `yes`.
     
     You will be connected to the remote EC2 instance.
-    
+
+---
 
 ### 5. Destroy All resources
 
@@ -459,6 +473,6 @@ In this article, we:
 - https://youtu.be/SLB_c_ayRMo?si=VI1mDwB8mdFXtmMP
 - https://youtu.be/iRaai1IBlB0?si=N6qau7TbrsftJ_z2
 
-**Tags:** 
+**Tags:**
 
 Infrastructure as Code, Terraform, AWS, Cloud Computing
