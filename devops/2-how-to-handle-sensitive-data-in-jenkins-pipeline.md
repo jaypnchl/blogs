@@ -14,8 +14,8 @@ In this article, you will learn how to handle sensitive data in Jenkins Pipeline
 
 ## How to Handle Sensitive Data in Jenkins Pipeline:
 
-- Create Credentials from Jenkins
-- Use Credentials in Pipeline Code
+- [Create Credentials from Jenkins](#create-credentials-from-jenkins)
+- [Use Credentials in Pipeline Code](#use-credentials-in-pipeline-code)
 
 ### Create Credentials from Jenkins
 
