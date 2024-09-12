@@ -1,6 +1,6 @@
 # How to Handle Sensitive Data in Jenkins Pipeline
 
-tags: `CICD`  `Jenkins`  `Sensitive Data`
+tags: `CICD`  `Jenkins`  `Security`
 
 ![how-to-handle-sensitive-data-in-jenkins-pipeline](../assets/covers/2-how-to-handle-sensitive-data-in-jenkins-pipeline.png)
 
